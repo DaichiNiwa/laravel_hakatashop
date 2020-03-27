@@ -44,6 +44,7 @@ class PurchaseService {
   }
 
   public function purchase_finish($user) {
+
     return DB::transaction(function () use ($user) {
       // 購入履歴の登録
       $history = new History([
