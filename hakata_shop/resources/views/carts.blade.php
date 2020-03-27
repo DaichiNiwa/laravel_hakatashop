@@ -45,8 +45,7 @@
         <li class="red">{{ $error }}</li>
       </ul>
     @endforeach
-    <form action="{{ url('/histories') }}
-    " method="post">
+    <form action="{{ url('/histories') }}" method="post">
       {{ csrf_field() }}
       <input type="submit" class="btn line-height2" value="購入を確定する">
     </form>
