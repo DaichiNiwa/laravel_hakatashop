@@ -23,7 +23,7 @@ class ItemsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(ItemRequest $request)
+    public function index(Request $request)
     {
         $items_query = Item::where('status',1);
         // 検索キーワードがある場合
@@ -31,7 +31,6 @@ class ItemsController extends Controller
             $items_query = $items_query->where('name', 'like', '%' . $request->keyword . '%');
         } 
         $items = $items_query->latest()->get();
-        
         return view('items', ['items' => $items]);
     }
 
@@ -82,7 +81,7 @@ class ItemsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(ItemRequest $request, Item $item)
+    public function update(Request $request, Item $item)
     {
         $user = \Auth::user();
         if($this->admin->is_admin($user) === false) {
@@ -96,7 +95,7 @@ class ItemsController extends Controller
         if(isset($request->status)) {
             $item->status = $request->status;
         }
-       
+
         $item->save();
         session()->flash('modal_msg', '更新が完了しました。');
         return redirect('/admin');
