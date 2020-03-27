@@ -12,7 +12,6 @@ class PurchaseService {
     session()->flash('modal_msg', '削除が完了しました。');
   }
   
-
   public function check_carts($user) {
     $is_success = true;
     $error_msgs = [];
@@ -23,6 +22,7 @@ class PurchaseService {
     }
     
     foreach($user->carts as $cart) {
+      $is_success = true;
       // 在庫がない、足りない、または非公開になった商品があればエラーメッセージを表示する
       if($cart->item->stock === 0) {
         $error_msgs[] = $cart->item->name . 'は売れ切れになっています。';

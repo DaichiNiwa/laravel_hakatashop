@@ -10,10 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-\Route::get('/', 'ItemsController@index');
 
 Auth::routes();
 
+\Route::get('/', 'ItemsController@index');
 // リソースルーティングを使用
 \Route::resource('admin', 'AdminController');
 \Route::resource('items', 'ItemsController');

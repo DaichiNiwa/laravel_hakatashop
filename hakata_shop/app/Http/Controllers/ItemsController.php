@@ -14,7 +14,6 @@ class ItemsController extends Controller
     public function __construct(PurchaseService $purchase, AdminService $admin) {
         $this->purchase = $purchase;
         $this->admin = $admin;
-        // authというミドルウェアを設定
         $this->middleware('auth');
     }
 
@@ -32,16 +31,6 @@ class ItemsController extends Controller
         } 
         $items = $items_query->latest()->get();
         return view('items', ['items' => $items]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**

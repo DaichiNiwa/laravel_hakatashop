@@ -41,9 +41,7 @@
                 <p class="red">売り切れ</p>
               @else
                 <form method="post" action="{{ url('/carts', $item) }}">
-                {{-- <form method="post" action="{{ url('/carts') }}"> --}}
                   {{ csrf_field() }}
-                  <input readonly type="hidden"  name="item_id" value="{{ $item->id }}">
                   <select name="amount">
                     @for($i = 1; $i <= 8; $i++)
                       <option value="{{ $i }}">{{ $i }}</option>

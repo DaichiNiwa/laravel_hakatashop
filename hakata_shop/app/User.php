@@ -22,12 +22,12 @@ class User extends Authenticatable
     }
 
     public function carts_sum() {
-        // return $this->carts->reduce(function($carry, $cart){
-        //         return $carry + $cart->cart_sum();
-        //     });
         return $this->carts->sum(function($cart) {
             return $cart->cart_sum();
         });
+        // return $this->carts->reduce(function($carry, $cart){
+        //         return $carry + $cart->cart_sum();
+        //     });という書き方もある
     }
     /**
      * The attributes that are mass assignable.

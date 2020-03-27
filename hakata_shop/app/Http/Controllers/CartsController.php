@@ -12,7 +12,6 @@ class CartsController extends Controller
 {
     public function __construct(PurchaseService $purchase) {
         $this->purchase = $purchase;
-        // authというミドルウェアを設定
         $this->middleware('auth');
     }
 
@@ -30,7 +29,6 @@ class CartsController extends Controller
 
         return view('carts')->with(
             compact('user')
-            // ['user' => $user,]
         );
     }
 
@@ -45,17 +43,15 @@ class CartsController extends Controller
         
         $user = \Auth::user();
         // すでに同じ商品がカートにあるか確かめ、あるなら個数を追加する
-        // existsメソッドならCart::where('user_id', $user->id)->exist();で戻り値bool
+        // existsメソッドを使えばCart::where('user_id', $user->id)->exist();で戻り値boolという書き方もできる
         $same_cart = Cart::where('user_id', $user->id)
             ->where('item_id', $item->id)
             ->first();
         if(isset($same_cart)) {
             $same_cart->amount += $request->amount;
-
             $same_cart->save();
         } else {
             // 同じ商品がカートにないなら、新しく追加する
-            // user_idはあとから修正
             $cart = new Cart([
                 'user_id' => $user->id,
                 'item_id' => $item->id,
