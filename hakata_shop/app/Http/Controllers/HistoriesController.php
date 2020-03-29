@@ -61,6 +61,12 @@ class HistoriesController extends Controller
      */
     public function show(History $history)
     {
+        // dd($history->HistoryDetails()->get());
+
+        // foreach($history->HistoryDetails()->get() as $history_details){
+        //     dd($history_details->item);
+        // };
+        // // dd($history->HistoryDetails());
         return view('history_details')->with('history', $history);
     }
 }
