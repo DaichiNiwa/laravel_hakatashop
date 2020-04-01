@@ -7,7 +7,7 @@
 <main>
   <div class="container">
     <h1>カートの中身</h1>
-    <p>合計金額：<?= $user->carts_sum() ?>円</p>
+    <p>合計金額：{{ $user->carts_sum() }}円</p>
     @foreach($user->carts as $cart)
       <table>
         <tr>

@@ -24,4 +24,3 @@ Auth::routes();
 \Route::post('carts/{item}', 'CartsController@store');
 // 購入完了処理の後、url(finish)へ
 \Route::get('finish', 'ProcessController@finish');
-
