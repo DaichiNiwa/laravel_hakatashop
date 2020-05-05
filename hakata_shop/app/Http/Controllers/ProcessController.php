@@ -9,7 +9,6 @@ class ProcessController extends Controller
 {
     public function __construct(PurchaseService $purchase) {
         $this->purchase = $purchase;
-        // authというミドルウェアを設定
         $this->middleware('auth');
     }
 
