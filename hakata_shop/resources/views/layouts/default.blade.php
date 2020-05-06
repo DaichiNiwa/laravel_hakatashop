@@ -2,6 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <!-- Google検索で表示しない -->
+  <meta name="robots" content="noindex" />
   <title>@yield('title')</title>
   <link rel="stylesheet" type="text/css" href="/css/html5reset-1.6.1.css" media="screen">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">

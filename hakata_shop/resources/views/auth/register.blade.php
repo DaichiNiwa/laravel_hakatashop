@@ -5,6 +5,8 @@
 @section('content')
 <main>
     <div class="container">
+        <p>このサイトは制作者がプログラミングの学習のために制作したものです。実際に購入することはできません。</p>
+        <p><a href="https://daichi-portfolio.com/">ポートフォリオサイトへ戻る</a></p>
         <div class="flex">
             <div>
                 <h1>新規会員登録</h1>
