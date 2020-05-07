@@ -14,11 +14,11 @@ class User extends Authenticatable
     }
 
     public function carts() {
-        return $this->hasMany('App\cart');
+        return $this->hasMany('App\Cart');
     }
 
     public function histories() {
-        return $this->hasMany('App\history');
+        return $this->hasMany('App\History');
     }
 
     public function carts_sum() {
