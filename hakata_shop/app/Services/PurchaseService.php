@@ -22,7 +22,6 @@ class PurchaseService {
     }
     
     foreach($user->carts as $cart) {
-      $is_success = true;
       // 在庫がない、足りない、または非公開になった商品があればエラーメッセージを表示する
       if($cart->item->stock === 0) {
         $error_msgs[] = $cart->item->name . 'は売れ切れになっています。';
