@@ -40,7 +40,7 @@
         <th>商品の削除</th>
       </tr>
       @foreach ($items as $item)
-          <tr @if($item->status === 0) class="status_fault" @endif>
+          <tr @if($item->status === '0') class="status_fault" @endif>
             <td><img src="{{ asset('storage/photos/' . $item->image) }}"></td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->price }}円</td>
@@ -53,15 +53,15 @@
               </form>
             </td>
             <td>
-              @if ($item->status === 1)
+              @if ($item->status === '1')
                 <p>公開</p>
-              @elseif($item->status === 0)
+              @elseif($item->status === '0')
                 <p>非公開</p>
               @endif
               <form method="post" action="{{ url('/items', $item) }}">
                 {{ csrf_field() }}
                 {{ method_field('patch') }}
-                <input readonly type="hidden"  name="status" value="{{ $item->status === 0 ? 1 : 0 }}">
+                <input readonly type="hidden"  name="status" value="{{ $item->status === '0' ? 1 : 0 }}">
                 <input type="submit" class="btn line-height2" value="ステータス変更">
               </form>
             </td>
