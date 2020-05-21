@@ -6,6 +6,7 @@
 <main>
     <div class="container">
         <p>このサイトは制作者がプログラミングの学習のために制作したものです。実際に購入することはできません。</p>
+        <p>新規登録をする際は、架空のメールアドレスを入力してください。</p>
         <p><a href="https://daichi-portfolio.com/">ポートフォリオサイトへ戻る</a></p>
         <div class="flex">
             <div>

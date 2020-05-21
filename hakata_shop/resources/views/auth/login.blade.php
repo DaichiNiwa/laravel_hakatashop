@@ -6,6 +6,10 @@
 <main>
     <div class="container">
     <p>このサイトは制作者がプログラミングの学習のために制作したものです。実際に購入することはできません。</p>
+    <p>全てのページを自由にご覧いただけます。</p>
+    <p>このサイトでは一般の利用客としてログインすることと、ショッピングサイト管理者としてログインすることができます。</p>
+    <p>一般の利用客としてログインする場合は、新規登録をしてください。</p>
+    <p>管理者としてログインする場合はメールアドレス「test@test.com」、パスワード「password」でログインしてください。</p>
     <p><a href="https://daichi-portfolio.com/">ポートフォリオサイトへ戻る</a></p>
     <div class="flex">
         <a href="{{ route('register') }}" class="btn large-btn mv_register">新規登録ページへ移動</a>
@@ -32,8 +36,6 @@
                 </label>
                 <p><input type="submit" class="btn line-height2" value="ログイン"></p>
             </form>
-            <p>管理者としてログインする場合はメールアドレス「test@test.com」、</p>
-            <p>パスワード「password」でログインしてください。</p>
             <a class="btn-link" href="{{ route('password.request') }}">
                 パスワードを忘れましたか？
             </a>
